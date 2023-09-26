@@ -13,7 +13,7 @@ const Skills = () => {
                 Hover over a skill for current profieciency
             </h3>
 
-            <div className="grid grid-cols-4 gap-5">
+            <div className="grid grid-cols-4 gap-5 relative top-16 md:top-10">
                <Skill />
                <Skill />
                <Skill />

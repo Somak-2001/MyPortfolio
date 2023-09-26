@@ -5,11 +5,12 @@ import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
 import Skills from '@/components/Skills'
 import WorkExperience from '@/components/WorkExperience'
+import { NextPage } from 'next'
 import Image from 'next/image'
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
-    <main className=' bg-slate-700 text-white h-screen snap-y snap-mandatory overflow-scroll z-0'>
+    <main className=' bg-slate-700 text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/60'>
       {/* Header Section */}
       <Header />
 
@@ -47,3 +48,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home;

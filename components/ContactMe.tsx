@@ -1,8 +1,32 @@
+'use client';
+
 import { PhoneIcon } from '@heroicons/react/20/solid';
 import { EnvelopeIcon } from '@heroicons/react/24/solid';
 import { MapPinIcon } from '@heroicons/react/24/solid';
+import { useForm, SubmitHandler } from "react-hook-form"
+
+type Inputs={
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+};
 
 const ContactMe = () => {
+
+  // In the every input field register is used to take the input value and then handlesubmit is used to submit the entire esponse
+  const {
+    register,
+    handleSubmit,
+  } = useForm<Inputs>()
+
+  // Onsubmit is our submit function and handleSubmit is given by react-hook-form
+  const onSubmit: SubmitHandler<Inputs> = (data) =>{
+
+    // Mail Client send all the data to papareact@gmail
+    window.location.href = `mailto:papareact.team@gmail?subject=${data.subject}&body=Hi, my name is ${data.name}, ${data.message} ${data.email}`;
+  };
+
   return (
     <div className="h-screen flex flex-col md:flex-row relative text-center md:text-left max-w-7xl px-10 justify-evenly mx-auto items-center">
     <h3 className="absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl">Contact</h3>
@@ -30,15 +54,17 @@ const ContactMe = () => {
             <p className='text-2xl'>123 React Lane</p>
           </div>
         </div>
-        <form className='flex flex-col space-y-2 w-fit mx-auto'>
+
+        {/* Contact Form */}
+        <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
            <div className='flex space-x-2'>
-            <input type='text' placeholder='Name' className='outline-none bg-slate-500/30 focus:bg-slate-300/30 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40'/>
-            <input type='text' placeholder='Email' className='outline-none bg-slate-500/30 focus:bg-slate-300/30 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40'/>
+            <input {...register('name')} type='text' placeholder='Name' className='outline-none bg-slate-500/30 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-900  placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 hover:border-b-2'/>
+            <input {...register('email')} type='text' placeholder='Email' className='outline-none bg-slate-500/30 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-900 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 hover:border-b-2'/>
            </div>
 
-           <input type='text' placeholder='Subject' className='outline-none bg-slate-500/30 focus:bg-slate-300/30 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40'/>
+           <input {...register('subject')} type='text' placeholder='Subject' className='outline-none bg-slate-500/30  rounded-sm border-b px-6 py-4 border-[#242424] text-gray-900  placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 hover:border-b-2'/>
 
-           <textarea placeholder='Message' className='outline-none bg-slate-500/30 focus:bg-slate-300/30 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40'/>
+           <textarea {...register('message')} placeholder='Message' className='outline-none bg-slate-500/30 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-900 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 hover:border-b-2'/>
 
            <button type='submit' className='bg-[#F7AB0A] py-5 px-10 rounded-md text-black font-bold text-lg'>
             Submit
