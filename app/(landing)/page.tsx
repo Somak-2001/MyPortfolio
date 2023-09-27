@@ -7,6 +7,9 @@ import Skills from '@/components/Skills'
 import WorkExperience from '@/components/WorkExperience'
 import { NextPage } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
+
+import Avatar from '@/public/footer_avatar.png';
 
 const Home: NextPage = () => {
   return (
@@ -45,6 +48,19 @@ const Home: NextPage = () => {
       <section id='contact' className='snap-start'>
         <ContactMe />
       </section>
+
+      <Link href='#hero'>
+        <footer className='sticky w-full bottom-5 cursor-pointe'>
+          <div className='flex items-center justify-center'>
+            <Image 
+            className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
+            src={Avatar}
+            alt='Footer' 
+            width={100}
+            height={100}/>
+          </div>
+        </footer>
+      </Link>
     </main>
   )
 }
