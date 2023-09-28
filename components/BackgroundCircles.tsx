@@ -7,7 +7,7 @@ const BackgroundCircles = () => {
       <div className="absolute border-[#FFFF] h-[200px] w-[200px] rounded-full mt-52" />
       <div className="absolute border-[#FFFF] h-[200px] w-[200px] rounded-full mt-52" />
       {/* Outer Circle */}
-      <div className="absolute border border-[#F7AB0A] h-[650px] w-[650px] rounded-full mt-52 animate-pulse"/>
+      <div className="absolute border border-[#F7AB0A] h-[550px] w-[550px] md:h-[650px] md:w-[650px] rounded-full mt-52 animate-pulse"/>
       <div className="absolute border-[#FFFF] h-[800px] w-[800px] rounded-full mt-52"/>
     </div>
   )
