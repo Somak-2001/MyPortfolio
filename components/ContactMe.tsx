@@ -24,7 +24,7 @@ const ContactMe = () => {
   const onSubmit: SubmitHandler<Inputs> = (data) =>{
 
     // Mail Client send all the data to papareact@gmail
-    window.location.href = `mailto:papareact.team@gmail?subject=${data.subject}&body=Hi, my name is ${data.name}, ${data.message} ${data.email}`;
+    window.location.href = `mailto:somakofficial01@gmail.com?subject=${data.subject}&body=Hi, my name is ${data.name}(Email: ${data.email}), ${data.message}`;
   };
 
   return (
