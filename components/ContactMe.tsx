@@ -66,7 +66,7 @@ const ContactMe = () => {
 
            <textarea {...register('message')} placeholder='Message' className='outline-none bg-slate-500/30 rounded-sm border-b px-2 py-3 md:px-6 md:py-4 border-[#242424] text-gray-900 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40 hover:border-b-2'/>
 
-           <button type='submit' className='bg-[#F7AB0A] px-10 py-2 md:py-5 rounded-md text-black font-bold text-lg'>
+           <button type='submit' className='bg-[#F7AB0A] px-10 py-2 md:py-5 rounded-md text-black font-bold text-lg hover:bg-amber-400'>
             Submit
            </button>
         </form>

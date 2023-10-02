@@ -19,7 +19,7 @@ const ExperienceCard = () => {
         opacity: 1,
         y: 0
       }}
-      viewport={{ once: true }}
+      // viewport={{ once: true }}
       >
         <Image src={CEOExp}
         className="h-32 w-32 rounded-full object-cover object-center xl:w-[150px] xl:h-[150px]"
